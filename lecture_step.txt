@@ -1,0 +1,4 @@
+1. slide
+2. praktek
+3. ajarin selector / memilih halaman HTML
+4. Menambahkan, menghapus , mengedit html

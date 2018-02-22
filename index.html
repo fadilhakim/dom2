@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belajar Dom</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css">
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1 class="navbar-brand" href="#">Belajar Doom Kuy</h1>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+            <p>What is Dom ?</p>
+            dom adalah singkatan dari dokumen object model,
+            object-object model yang nanti di render atau di buat pada browser.
+            // maksud object yg disebutkan disini berbeda dengan object literal yang
+            sudah kita pelajari pada minggu ini.
+            yang kita sebut Object-object yg nanti akan di render pada browser ini adalah semua
+            element html yg kita buat .
+            kita bisa menambahkan secara otomatis element html baru mengganti , mengisi dan lain-lain pada element html kita
+            tentunya hal ini kita lakukan dengan bantuan javascript!
+    </div>
+    
+    <div class="container">
+        <h1 id="motherBox"></h1>
+
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+        <br>
+        Phase 0 Materi
+        <br>
+        <ul>
+            <li>Basic JS</li>
+            <li>html & CSS</li>
+            <li>Git & GIt Hub</li>
+        </ul>
+        <button class="btn btn-primary reveal" onclick="reveal()">
+            See the magic happen
+        </button>
+
+        <button class="btn btn-primary" onclick="createSomething()">
+            Create Something
+        </button>
+    </div>
+
+
+    <script>
+        function reveal(){
+             //selektor / memilih element
+        document.getElementById("motherBox").innerHTML = "I see Dead People";
+        //code di atas untuk memilih element html by id dan nanti kita isi didalam nya dengan sebuah string
+
+       // document.getElementsByClassName("kotak")[0].innerHTML = "Jack Reaper";
+        //document.getElementsByClassName("kotak")[1].innerHTML = "Toms Kratos";
+        //sedangkan untuk memilih element by class kita gunakan code diatas, ingat getElements nya pakai S
+        //karena sifat class itu bisa lebih dari satu ada plural
+
+        // dan bedanya lagi kalau kita pakai class ini adalah di tritmen seperti kita
+        // memanggil sebuah array, kita panggil no urut index nya. berbeda dengan id yang tidak perlu no index
+        // mas kalau kea gtu kita cape dong mas nulis satu satu kalau ada class kotak nya banyak
+        // gimana caranya ?
+        //caranya dengan code jd dibawah ini
+        var button = document.getElementsByName('reveal')
+        var kotak =  document.getElementsByClassName("kotak")
+        for(let i = 0; i < kotak.length; i++){
+            kotak[i].innerHTML = "Nama" + i
+        }
+        //kotak[0].innerHTML = "jack reaper"
+        //kotak[1].innerHTML = "Afgan"
+        //kotak[3].innerHTML = "malasik"
+
+        }
+        function createSomething(){
+           var img = document.createElement('img')
+           img.src = 'index.png'
+
+           document.getElementsByClassName("container")[0].appendChild(img)
+        }
+
+    </script>
+</body>
+</html>
